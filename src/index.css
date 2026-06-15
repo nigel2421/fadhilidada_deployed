@@ -1,0 +1,977 @@
+/* Fadhili Dada CSS Design System — Red · White · Black · Metal Grey */
+
+:root {
+  /* Primary: Rich Red */
+  --primary-h: 0;
+  --primary-s: 80%;
+  --primary-l: 38%;
+  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+  --primary-light: hsl(var(--primary-h), var(--primary-s), 52%);
+  --primary-dark: hsl(var(--primary-h), var(--primary-s), 24%);
+  --primary-rgb: 184, 18, 18;
+
+  /* Secondary: Metal Grey */
+  --secondary-h: 0;
+  --secondary-s: 0%;
+  --secondary-l: 44%;
+  --secondary: hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l));
+  --secondary-light: hsl(var(--secondary-h), var(--secondary-s), 62%);
+  --secondary-dark: hsl(var(--secondary-h), var(--secondary-s), 26%);
+  --secondary-rgb: 112, 112, 112;
+
+  /* Accent: Bright Red highlight */
+  --accent-h: 0;
+  --accent-s: 88%;
+  --accent-l: 58%;
+  --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+
+  /* Surfaces */
+  --bg-sand: hsl(0, 0%, 97%);
+  --bg-sand-dark: hsl(0, 0%, 92%);
+  --surface: hsl(0, 0%, 100%);
+  --surface-dark: hsl(0, 0%, 8%);
+
+  /* Text */
+  --text-charcoal: hsl(0, 0%, 8%);
+  --text-muted: hsl(0, 0%, 44%);
+  --text-light: hsl(0, 0%, 98%);
+
+  /* Borders */
+  --border-color: hsl(0, 0%, 88%);
+  --border-color-dark: hsl(0, 0%, 22%);
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 16px rgba(184, 18, 18, 0.10);
+  --shadow-lg: 0 16px 32px rgba(184, 18, 18, 0.12);
+  --shadow-grey: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* Fonts */
+  --font-headings: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-sand);
+  color: var(--text-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+}
+
+h1 {
+  font-size: 2.75rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+.text-center h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: var(--text-charcoal);
+}
+
+p.lead {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+/* Base Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-bg-alt {
+  background-color: var(--bg-sand-dark);
+}
+
+.section-primary {
+  background-color: var(--surface-dark);
+  color: var(--text-light);
+}
+
+.section-primary h1, .section-primary h2, .section-primary h3 {
+  color: var(--text-light);
+}
+
+.section-primary h2::after {
+  background-color: var(--primary);
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 768px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-headings);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.35);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(var(--secondary-rgb), 0.35);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  border-color: var(--text-light);
+  color: var(--text-light);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--text-light);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Cards & Containers */
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(var(--primary-rgb), 0.3);
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+}
+
+/* ─── Image Frames ─ aspect-ratio controlled containers ─── */
+.img-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-sand-dark);
+  flex-shrink: 0;
+}
+
+.img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.img-frame:hover img {
+  transform: scale(1.04);
+}
+
+.img-frame-portrait  { aspect-ratio: 3 / 4; }
+.img-frame-landscape { aspect-ratio: 4 / 3; }
+.img-frame-square    { aspect-ratio: 1 / 1; }
+.img-frame-wide      { aspect-ratio: 16 / 9; }
+.img-frame-cinema    { aspect-ratio: 21 / 9; }
+.img-frame-story     { aspect-ratio: 3 / 5; }
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+}
+
+.form-control {
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface);
+  transition: var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.10); }
+}
+
+@keyframes slowPan {
+  from { transform: scale(1.10) translateX(0); }
+  to   { transform: scale(1.10) translateX(-3%); }
+}
+
+.animate-fade {
+  animation: fadeIn var(--transition-slow) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) forwards;
+}
+
+/* ─── Navigation ─── */
+.navbar {
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--primary);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-headings);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.nav-logo img {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: none;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-link {
+  font-family: var(--font-headings);
+  font-weight: 600;
+  color: var(--text-charcoal);
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary);
+  background-color: rgba(var(--primary-rgb), 0.06);
+}
+
+.nav-link.active {
+  border-bottom: 2px solid var(--primary);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.nav-toggle-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--primary-dark);
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .nav-toggle-btn {
+    display: none;
+  }
+}
+
+/* Mobile Nav Overlay */
+.mobile-nav-menu {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--surface);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-normal);
+  border-top: 1px solid var(--border-color);
+}
+
+.mobile-nav-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border-left: 4px solid transparent;
+}
+
+.mobile-nav-link.active {
+  background-color: rgba(var(--primary-rgb), 0.06);
+  border-left-color: var(--primary);
+}
+
+/* ─── Stats Bar ─── */
+.stats-bar {
+  background-color: var(--surface-dark);
+  color: var(--text-light);
+  border-top: 4px solid var(--primary);
+  padding: 3rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stat-number {
+  font-family: var(--font-headings);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary-light);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+/* ─── Fallback Image Placeholder ─── */
+.image-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.75), rgba(var(--secondary-rgb), 0.75));
+  color: var(--text-light);
+  text-align: center;
+  border-radius: var(--radius-md);
+  aspect-ratio: 16 / 9;
+  box-shadow: var(--shadow-sm);
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+}
+
+.image-placeholder-icon {
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.image-placeholder-title {
+  font-family: var(--font-headings);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.image-placeholder-desc {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  max-width: 250px;
+}
+
+/* ═══════════════════════════════
+   HERO SLIDER
+═══════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-dark);
+  color: var(--text-light);
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+/* Slide track sits at z-index 0 */
+.hero-slider-track {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  will-change: opacity;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Active slide gets the slow Ken-Burns zoom */
+.hero-slide.active img {
+  animation: slowZoom 8s ease-out forwards;
+}
+
+/* Dot indicators */
+.hero-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.hero-dot.active {
+  width: 28px;
+  background-color: var(--primary);
+}
+
+/* Overlay sits at z-index 1 */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 8, 8, 0.84) 0%,
+    rgba(184, 18, 18, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+/* Legacy single-image bg (kept for fallback) */
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+/* Hero content sits at z-index 2 */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.hero-content h1 {
+  color: var(--text-light);
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Value / Icon wrapper */
+.value-icon-wrapper {
+  background-color: rgba(var(--primary-rgb), 0.08);
+  color: var(--primary);
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.pillar-card {
+  background: var(--surface);
+  border-left: 5px solid var(--primary);
+}
+
+.pillar-card:nth-child(2n) {
+  border-left-color: var(--secondary);
+}
+
+.pillar-card:nth-child(3n) {
+  border-left-color: var(--accent);
+}
+
+.pillar-number {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.quote-card {
+  position: relative;
+  background-color: rgba(var(--primary-rgb), 0.03);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  border: 1px solid var(--border-color);
+  margin-top: 1.5rem;
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 4rem;
+  color: rgba(var(--primary-rgb), 0.10);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+  color: var(--text-charcoal);
+  margin-bottom: 1rem;
+}
+
+.quote-author {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.quote-author-title {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ─── Partners Marquee ─── */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2.5rem;
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 1.25rem)); }
+}
+
+.partner-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  min-width: 200px;
+  padding: 1rem;
+}
+
+/* ─── Photo Gallery Marquee (Home page) ─── */
+/* Override animation speed for the photo strip — much more content, slower scroll */
+.photo-marquee-content {
+  gap: 1.25rem;
+  animation-name: marquee;
+  animation-duration: 90s; /* Slow, cinematic scroll across all 68 images */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.photo-marquee-content:hover {
+  animation-play-state: paused;
+}
+
+/* Soft fade edges so the strip looks infinite */
+.marquee-container:has(.photo-marquee-content)::before,
+.marquee-container:has(.photo-marquee-content)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container:has(.photo-marquee-content)::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-sand), transparent);
+}
+
+.marquee-container:has(.photo-marquee-content)::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-sand), transparent);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RECOMMENDATION 1: Metal Grey Section Background
+   Gives long-form content sections a visual "break"
+   between pure white and pure black.
+═══════════════════════════════════════════════════════ */
+.section-metal-grey {
+  background-color: hsl(0, 0%, 18%);  /* deep charcoal/metal grey */
+  color: var(--text-light);
+}
+
+.section-metal-grey h1,
+.section-metal-grey h2,
+.section-metal-grey h3 {
+  color: var(--text-light);
+}
+
+.section-metal-grey h2::after {
+  background-color: var(--primary);
+}
+
+.section-metal-grey p {
+  color: rgba(255, 255, 255, 0.82);  /* Accessibility: high contrast on dark bg */
+}
+
+.section-metal-grey .card {
+  background-color: hsl(0, 0%, 24%);
+  border-color: hsl(0, 0%, 32%);
+  color: var(--text-light);
+}
+
+.section-metal-grey .card:hover {
+  border-color: rgba(var(--primary-rgb), 0.6);
+  background-color: hsl(0, 0%, 27%);
+}
+
+.section-metal-grey .card-title,
+.section-metal-grey h3 {
+  color: var(--text-light);
+}
+
+.section-metal-grey .card p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RECOMMENDATION 2b: Scroll Reveal Animations
+   Elements start invisible/offset and reveal when scrolled into view.
+═══════════════════════════════════════════════════════ */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-on-scroll.delay-1 { transition-delay: 0.10s; }
+.reveal-on-scroll.delay-2 { transition-delay: 0.20s; }
+.reveal-on-scroll.delay-3 { transition-delay: 0.30s; }
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide-in from left variant */
+.reveal-from-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-from-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide-in from right variant */
+.reveal-from-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-from-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RECOMMENDATION 3: Stat Portraits — circular avatar above each stat
+═══════════════════════════════════════════════════════ */
+.stat-portrait {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary);
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.18);
+  flex-shrink: 0;
+}
+
+.stat-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RECOMMENDATION 4: Accessibility & Contrast Fixes
+   Body text in all dark sections is white/light-grey
+   to meet WCAG AA contrast ratio (≥4.5:1).
+═══════════════════════════════════════════════════════ */
+
+/* Stats bar body text: was 0.65 opacity white, now explicit readable colour */
+.stats-bar .stat-desc {
+  color: hsl(0, 0%, 78%);  /* Contrast ratio ~5.1:1 on the dark bg */
+}
+
+/* section-primary (near-black) body text should always be pure white-ish */
+.section-primary p,
+.section-primary li {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+/* Ensure card text inside dark sections is readable */
+.section-metal-grey .value-icon-wrapper {
+  background-color: rgba(var(--primary-rgb), 0.18);
+  color: var(--primary-light);
+}
+
+/* ─── Flip card section heading accent ─── */
+.transformation-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+}
+
+.transformation-heading p {
+  color: rgba(255, 255, 255, 0.80);
+  font-size: 1.05rem;
+}

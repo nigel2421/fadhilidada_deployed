@@ -1,0 +1,115 @@
+// ===============================================================
+// Fadhili Dada Organization — Firestore Security Rules
+// ===============================================================
+//
+// Assumed Data Model
+// ===============================================================
+//
+// Collection: supporters
+// Document ID: auto-generated
+// Fields:
+//   - supportType: string (required) — one of: "financial", "in-kind", "volunteer", "partner"
+//   - name:        string (required, 2–100 chars) — full name of the supporter
+//   - email:       string (required, valid email format) — contact email
+//   - phone:       string (optional, max 30 chars) — phone number
+//   - amount:      string (optional, max 50 chars) — pledge amount, only for financial type
+//   - transactionDetails: string (optional, max 100 chars) — M-PESA or bank ref
+//   - comments:    string (optional, max 2000 chars) — free-text details (in-kind, volunteer, partner)
+//   - createdAt:   string (required, ISO 8601 format) — submission timestamp
+//
+// Access pattern:
+//   - CREATE: public (unauthenticated form submissions from visitors)
+//   - READ:   denied (PII data — only accessible via Firebase Admin SDK / Console)
+//   - UPDATE: denied (submissions are immutable)
+//   - DELETE: denied (submissions are immutable)
+//
+// ===============================================================
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helper Functions ──────────────────────────────────────
+    function isValidEmail(email) {
+      return email is string &&
+             email.matches("^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function validStringLength(data, field, minLen, maxLen) {
+      return data[field] is string &&
+             data[field].size() >= minLen &&
+             data[field].size() <= maxLen;
+    }
+
+    function isValidOptionalString(data, field, maxLen) {
+      return !(field in data) ||
+             (data[field] is string && data[field].size() <= maxLen);
+    }
+
+    // ── Domain Validator ─────────────────────────────────────
+    // Validates a supporter submission document.
+    // Called on EVERY create to enforce strict schema.
+    function isValidSupporter(data) {
+      let allowedTypes = ['financial', 'in-kind', 'volunteer', 'partner'];
+      let requiredFields = ['supportType', 'name', 'email', 'createdAt'];
+
+      return
+        // Required fields must all be present
+        data.keys().hasAll(requiredFields) &&
+
+        // No extra fields beyond the known schema (prevents pollution)
+        data.keys().hasOnly([
+          'supportType', 'name', 'email', 'phone',
+          'amount', 'transactionDetails', 'comments', 'createdAt'
+        ]) &&
+
+        // supportType must be one of the four known values
+        data.supportType in allowedTypes &&
+
+        // name: required string, 2–100 chars
+        validStringLength(data, 'name', 2, 100) &&
+
+        // email: required, valid format, max 254 chars (RFC 5321 limit)
+        isValidEmail(data.email) &&
+        data.email.size() <= 254 &&
+
+        // phone: optional string, max 30 chars
+        isValidOptionalString(data, 'phone', 30) &&
+
+        // amount: optional string (for financial type), max 50 chars
+        isValidOptionalString(data, 'amount', 50) &&
+
+        // transactionDetails: optional string, max 100 chars
+        isValidOptionalString(data, 'transactionDetails', 100) &&
+
+        // comments: optional free text, max 2000 chars
+        isValidOptionalString(data, 'comments', 2000) &&
+
+        // createdAt: required string, reasonable ISO 8601 length
+        data.createdAt is string &&
+        data.createdAt.size() >= 10 &&
+        data.createdAt.size() <= 50;
+    }
+
+    // ── Supporters Collection ────────────────────────────────
+    // Public CREATE allowed (contact form submissions from website visitors).
+    // All other operations (read, update, delete) are denied to protect PII.
+    match /supporters/{docId} {
+      // Anyone on the website can submit the support form
+      allow create: if isValidSupporter(request.resource.data);
+
+      // Reads are denied — staff access submissions via Firebase Console / Admin SDK only
+      allow read:   if false;
+
+      // Submissions are append-only; no editing or deletion
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    // ── Default: Deny Everything Else ───────────────────────
+    // Any collection not explicitly matched above is fully locked.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
