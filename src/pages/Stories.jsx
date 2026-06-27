@@ -1,4 +1,3 @@
-import React from 'react';
 import { Calendar, MapPin, Award } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
 

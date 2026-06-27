@@ -115,7 +115,6 @@ const FLIP_CARDS = [
 const Home = ({ setCurrentPage }) => {
   const handleNavClick = (pageId) => {
     setCurrentPage(pageId);
-    // eslint-disable-next-line react-hooks/immutability
     window.location.hash = pageId === 'home' ? '' : `#${pageId}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

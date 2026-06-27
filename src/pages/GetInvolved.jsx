@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Heart, Gift, Users, Handshake, ShieldAlert, Sparkles, X, Check, Copy } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
 import SupportFlow from '../components/SupportFlow';
 

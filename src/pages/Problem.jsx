@@ -1,5 +1,4 @@
-import React from 'react';
-import { AlertCircle, TrendingUp, HelpCircle, BookOpen, AlertTriangle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
 
 const Problem = () => {

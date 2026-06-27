@@ -1,3 +1,4 @@
+import React from 'react';
 import { Heart, Compass, Shield, Users, Award, BookOpen } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
 
@@ -51,7 +52,7 @@ const About = () => {
             <div>
               <div className="img-frame img-frame-square" style={{ maxWidth: '360px', margin: '0 auto 1.5rem auto' }}>
                 <ImageWithFallback
-                  src="/images/team/.jaredabout.png"
+                  src="/images/team/.jaredabout.jpg"
                   alt="Reverend Jared Okello"
                   description="Reverend Jared Okello, Founder of Fadhili Dada"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
@@ -197,7 +198,7 @@ const About = () => {
             {/* Context/Environment Side Picture */}
             <div className="card" style={{ padding: 0, overflow: 'hidden', gridColumn: 'span 1', display: 'flex', justifyContent: 'center' }}>
               <ImageWithFallback
-                src="/images/The living conditions of the girls/IMG_20230408_171835.webp"
+                src="/images/The living conditions of the girls/IMG_20230408_171835.jpg"
                 alt="Fadhili Dada environment"
                 description="Living conditions and community setting"
                 style={{ width: '100%', height: '100%', minHeight: '220px', objectFit: 'cover' }}
@@ -241,7 +242,7 @@ const About = () => {
             <div>
               <div className="img-frame img-frame-landscape">
                 <ImageWithFallback
-                  src="/images/The Board of trustees/IMG_20231210_163328.webp"
+                  src="/images/The Board of trustees/IMG_20231210_163328.jpg"
                   alt="Fadhili Dada Team"
                   description="Fadhili Dada organization Board and Management team"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -268,7 +269,7 @@ const About = () => {
 
           <div className="grid grid-3" style={{ gap: '2rem' }}>
             {[
-              { name: 'Reverend Jared Okello', role: 'Executive Director & Founder', img: '/images/team/.jaredabout.png' },
+              { name: 'Reverend Jared Okello', role: 'Executive Director & Founder', img: '/images/team/.jaredabout.jpg' },
               { name: 'Kennedy Odongo', role: 'Board of Trustees', img: '/images/team/kennedy odongo.png' },
               { name: 'Lilian Yongo', role: 'Board of Trustees', img: '/images/team/lilian yongo.png' },
               { name: 'Mildred Akoth', role: 'Board of Trustees', img: '/images/team/mildred akoth.png' },

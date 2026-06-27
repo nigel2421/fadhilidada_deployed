@@ -1,4 +1,3 @@
-import React from 'react';
 import { Home, Baby, Award, HeartHandshake, Sparkles } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
 

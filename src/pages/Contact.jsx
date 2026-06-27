@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, Send, CheckCircle2 } from 'lucide-react';
-import ImageWithFallback from '../components/ImageWithFallback';
 
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
