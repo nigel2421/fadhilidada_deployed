@@ -17,7 +17,7 @@ const Stories = () => {
         'After three years in the programme — including completing her Form Four national examinations and a six-month computer software course — Irene exited the centre in May 2024 with a certificate in computer programming.',
         'She is now employed at a local cyber café in Kisumu, securing her own income. Her son, Sheldon, who was born into crisis, is now in pre-school and thriving in a healthy environment.',
       ],
-      image: '/images/testimonial/fdoirene.jpg',
+      image: '/images/testimonial/fdoirene.webp',
       imageDesc: 'Irene — computer programming graduate',
     },
     {
@@ -33,7 +33,7 @@ const Stories = () => {
         'Struggling with grief and displacement, she enrolled in primary school completion through Fadhili Dada and later transitioned to vocational training as a tailor.',
         'In July 2025, she exited the centre having completed her course in dressmaking and tailoring. She is now working in a popular boutique in Kakamega, building a name for herself.',
       ],
-      image: '/images/testimonial/Mitchell Andai an Preciouse Joy.jpg',
+      image: '/images/testimonial/Mitchell Andai an Preciouse Joy.webp',
       imageDesc: 'Mitchelle — dressmaking and tailoring graduate',
     },
     {
@@ -49,7 +49,7 @@ const Stories = () => {
         'Through consistent medical support, nutritional care, and our vocational training programme, both Florence and Kate flourished.',
         'Florence completed her tailoring certification in December 2025 and has successfully entered the local job market. Kate has made remarkable health progress and is growing strong.',
       ],
-      image: '/images/testimonial/fdoflorence.jpg',
+      image: '/images/testimonial/fdoflorence.webp',
       imageDesc: 'Florence — tailoring graduate',
     },
   ];
@@ -236,21 +236,21 @@ const Stories = () => {
           <div className="grid grid-3" style={{ gap: '1rem' }}>
             <div className="img-frame img-frame-landscape">
               <ImageWithFallback
-                src="/images/Group mentourship/IMG_20240918_131122.jpg"
+                src="/images/Group mentourship/IMG_20240918_131122.webp"
                 alt="Group session"
                 description="Group mentorship and peer support"
               />
             </div>
             <div className="img-frame img-frame-landscape">
               <ImageWithFallback
-                src="/images/Group mentourship/IMG_20231219_130220.jpg"
+                src="/images/Group mentourship/IMG_20231219_130220.webp"
                 alt="Mentorship training"
                 description="Vocational skills mentorship"
               />
             </div>
             <div className="img-frame img-frame-landscape">
               <ImageWithFallback
-                src="/images/Group mentourship/IMG_20250804_101012.jpg"
+                src="/images/Group mentourship/IMG_20250804_101012.webp"
                 alt="Community gathering"
                 description="Community gathering and support"
               />

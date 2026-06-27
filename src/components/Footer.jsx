@@ -1,10 +1,9 @@
-import React from 'react';
 import { Mail, Phone, MapPin, Heart } from 'lucide-react';
-import ImageWithFallback from './ImageWithFallback';
 
 const Footer = ({ setCurrentPage }) => {
   const handleNavClick = (pageId) => {
     setCurrentPage(pageId);
+    // eslint-disable-next-line react-hooks/immutability
     window.location.hash = pageId === 'home' ? '' : `#${pageId}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

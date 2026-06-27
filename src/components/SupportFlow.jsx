@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Heart, Gift, Users, Handshake, CheckCircle, ArrowLeft, ArrowRight } from 'lucide-react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase'; // Ensure you have exported 'db' from firebase.js

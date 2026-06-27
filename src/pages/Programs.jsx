@@ -15,7 +15,7 @@ const Programs = () => {
         '24-hour pastoral care and emotional grounding.',
         'Houses up to ten young mothers and their babies in a family-like environment.',
       ],
-      image: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_112705.jpg',
+      image: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_112705.webp',
       imageDesc: 'Safe house exterior and accommodation environment',
     },
     {
@@ -29,7 +29,7 @@ const Programs = () => {
         'Cognitive stimulation and play-based age-appropriate learning.',
         'Focus on the crucial first 1,000 days of child development.',
       ],
-      image: '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-01 at 18.07.28_4558dea1.jpg',
+      image: '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-01 at 18.07.28_4558dea1.webp',
       imageDesc: 'Children and daily activities at the daycare',
     },
     {
@@ -43,7 +43,7 @@ const Programs = () => {
         'Equipping graduates with government-recognized certificates.',
         'Providing start-up kits or seed capital where possible to start small businesses.',
       ],
-      image: '/images/Group mentourship/IMG_20231219_130220.jpg',
+      image: '/images/Group mentourship/IMG_20231219_130220.webp',
       imageDesc: 'Vocational training and group mentorship sessions',
     },
     {
@@ -57,7 +57,7 @@ const Programs = () => {
         'Post-reintegration follow-ups and home-based support.',
         'Spiritual formation, discipleship, and biblical life skills.',
       ],
-      image: '/images/Group mentourship/IMG_20231219_130149.jpg',
+      image: '/images/Group mentourship/IMG_20231219_130149.webp',
       imageDesc: 'Group support and family reintegration sessions',
     },
   ];
@@ -300,7 +300,7 @@ const Programs = () => {
             <div style={{ position: 'relative' }}>
               <div className="img-frame img-frame-landscape">
                 <ImageWithFallback
-                  src="/images/Group mentourship/IMG_20240918_131122.jpg"
+                  src="/images/Group mentourship/IMG_20240918_131122.webp"
                   alt="Purity and mentorship campaign"
                   description="Prevention and mentorship sessions in schools"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}

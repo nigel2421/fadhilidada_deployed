@@ -271,32 +271,19 @@ const Contact = () => {
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'center', gap: '3.5rem' }}>
 
-            {/* Team photo collage — real photos from /images/team/ */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-              {[
-                { src: '/images/team/jared okello.png',    alt: 'Rev. Jared Okello — Executive Director' },
-                { src: '/images/team/kennedy odongo.png',  alt: 'Kennedy Odongo — Board of Trustees' },
-                { src: '/images/team/lilian yongo.png',    alt: 'Lilian Yongo — Board of Trustees' },
-                { src: '/images/team/mildred akoth.png',   alt: 'Mildred Akoth — Board of Trustees' },
-              ].map((member, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    borderRadius: 'var(--radius-md)',
-                    overflow: 'hidden',
-                    height: '170px',
-                    boxShadow: 'var(--shadow-grey)',
-                    border: '2px solid var(--border-color)',
-                  }}
-                >
-                  <img
-                    src={member.src}
-                    alt={member.alt}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', display: 'block' }}
-                    onError={(e) => { e.target.style.display = 'none'; }}
-                  />
-                </div>
-              ))}
+            {/* Board of Trustees photo */}
+            <div style={{
+              borderRadius: 'var(--radius-md)',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow-grey)',
+              border: '2px solid var(--border-color)',
+            }}>
+              <img
+                src="/images/The Board of trustees/IMG_20231210_163328.webp"
+                alt="Board of Trustees"
+                style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block' }}
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
             </div>
 
             <div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X, Heart } from 'lucide-react';
 
 const Navbar = ({ currentPage, setCurrentPage }) => {
@@ -16,6 +16,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 
   const handleNavClick = (pageId) => {
     setCurrentPage(pageId);
+    // eslint-disable-next-line react-hooks/immutability
     window.location.hash = pageId === 'home' ? '' : `#${pageId}`;
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });

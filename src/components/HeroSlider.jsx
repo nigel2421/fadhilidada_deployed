@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 /**
  * HeroSlider — slowly crossfades between a list of images with a Ken Burns effect.

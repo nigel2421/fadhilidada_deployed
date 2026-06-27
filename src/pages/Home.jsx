@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, BookOpen, Users, Compass, Shield, ArrowRight } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import ImageWithFallback from '../components/ImageWithFallback';
@@ -7,49 +6,49 @@ import useScrollReveal from '../hooks/useScrollReveal';
 
 /* ── Hero images ──────────────────────────────────────────── */
 const HERO_IMAGES = [
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_112705.jpg', alt: 'Fadhili Dada Centre activities' },
-  { src: '/images/Group mentourship/IMG_20231219_130106.jpg',              alt: 'Group mentorship session' },
-  { src: '/images/The living conditions of the girls/20230717_130346.jpg', alt: 'Girls at the centre' },
-  { src: '/images/Surport needed/IMG_20231214_094434.jpg',                 alt: 'Community support programme' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20240819_125346.jpg', alt: 'Daycare and centre life' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_112705.webp', alt: 'Fadhili Dada Centre activities' },
+  { src: '/images/Group mentourship/IMG_20231219_130106.webp', alt: 'Group mentorship session' },
+  { src: '/images/The living conditions of the girls/20230717_130346.webp', alt: 'Girls at the centre' },
+  { src: '/images/Surport needed/IMG_20231214_094434.webp', alt: 'Community support programme' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20240819_125346.webp', alt: 'Daycare and centre life' },
 ];
 
 /* ── Photo marquee (all people/activity images, duplicated for loop) ── */
 const MARQUEE_PHOTOS = [
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_112705.jpg',    alt: 'Centre activities' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_121025.jpg',    alt: 'Centre life' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_123115.jpg',    alt: 'Daily programme' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_134710.jpg',    alt: 'Centre activities' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_135909.jpg',    alt: 'Centre activities' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_140121.jpg',    alt: 'Centre activities' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20240819_125346.jpg',    alt: 'Centre 2024' },
-  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20240819_125403.jpg',    alt: 'Centre 2024' },
-  { src: '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-01 at 18.07.28_4558dea1.jpg', alt: 'LovelyKids Daycare' },
-  { src: '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-13 at 07.58.01_58c7bb56.jpg', alt: 'Morning activities' },
-  { src: '/images/Group mentourship/20200919_113540_1.jpg',                   alt: 'Early mentorship' },
-  { src: '/images/Group mentourship/IMG-20231115-WA0004.jpg',                 alt: 'Mentorship outreach' },
-  { src: '/images/Group mentourship/IMG_20231219_130106.jpg',                 alt: 'Group session' },
-  { src: '/images/Group mentourship/IMG_20231219_130149.jpg',                 alt: 'Group session' },
-  { src: '/images/Group mentourship/IMG_20231219_130220.jpg',                 alt: 'Vocational training' },
-  { src: '/images/Group mentourship/IMG_20240820_111908.jpg',                 alt: 'Community gathering' },
-  { src: '/images/Group mentourship/IMG_20240918_131122.jpg',                 alt: 'Mentorship session' },
-  { src: '/images/Group mentourship/IMG_20250804_101012.jpg',                 alt: 'Programme 2025' },
-  { src: '/images/Group mentourship/IMG_20250804_101101.jpg',                 alt: 'Programme 2025' },
-  { src: '/images/Group mentourship/IMG_20250804_101125.jpg',                 alt: 'Programme 2025' },
-  { src: '/images/Surport needed/IMG_20231214_094434.jpg',                    alt: 'Support needed' },
-  { src: '/images/Surport needed/IMG_20231219_104131.jpg',                    alt: 'Support needed' },
-  { src: '/images/Surport needed/IMG_20231219_133155.jpg',                    alt: 'Community support' },
-  { src: '/images/Surport needed/IMG_20231219_133208.jpg',                    alt: 'Community support' },
-  { src: '/images/Surport needed/IMG_20231219_144635.jpg',                    alt: 'Community support' },
-  { src: '/images/The living conditions of the girls/20230717_130346.jpg',    alt: 'Girls at the centre' },
-  { src: '/images/The living conditions of the girls/IMG_20230408_171835.jpg',alt: 'Centre environment' },
-  { src: '/images/The Board of trustees/IMG_20231210_163328.jpg',             alt: 'Board of Trustees' },
-  { src: '/images/The Board of trustees/IMG_20231210_163527.jpg',             alt: 'Board of Trustees' },
-  { src: '/images/The Board of trustees/IMG_20240906_140037.jpg',             alt: 'Board meeting' },
-  { src: '/images/The Board of trustees/IMG_20241107_150151.jpg',             alt: 'Board meeting' },
-  { src: '/images/testimonial/fdoirene.jpg',                                  alt: 'Irene — graduate' },
-  { src: '/images/testimonial/fdoflorence.jpg',                               alt: 'Florence — graduate' },
-  { src: '/images/testimonial/Mitchell Andai an Preciouse Joy.jpg',           alt: 'Mitchelle — graduate' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_112705.webp', alt: 'Centre activities' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_121025.webp', alt: 'Centre life' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_123115.webp', alt: 'Daily programme' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_134710.webp', alt: 'Centre activities' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_135909.webp', alt: 'Centre activities' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20231219_140121.webp', alt: 'Centre activities' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20240819_125346.webp', alt: 'Centre 2024' },
+  { src: '/images/Daycar and Fadhili Dada Centre/IMG_20240819_125403.webp', alt: 'Centre 2024' },
+  { src: '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-01 at 18.07.28_4558dea1.webp', alt: 'LovelyKids Daycare' },
+  { src: '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-13 at 07.58.01_58c7bb56.webp', alt: 'Morning activities' },
+  { src: '/images/Group mentourship/20200919_113540_1.webp', alt: 'Early mentorship' },
+  { src: '/images/Group mentourship/IMG-20231115-WA0004.webp', alt: 'Mentorship outreach' },
+  { src: '/images/Group mentourship/IMG_20231219_130106.webp', alt: 'Group session' },
+  { src: '/images/Group mentourship/IMG_20231219_130149.webp', alt: 'Group session' },
+  { src: '/images/Group mentourship/IMG_20231219_130220.webp', alt: 'Vocational training' },
+  { src: '/images/Group mentourship/IMG_20240820_111908.webp', alt: 'Community gathering' },
+  { src: '/images/Group mentourship/IMG_20240918_131122.webp', alt: 'Mentorship session' },
+  { src: '/images/Group mentourship/IMG_20250804_101012.webp', alt: 'Programme 2025' },
+  { src: '/images/Group mentourship/IMG_20250804_101101.webp', alt: 'Programme 2025' },
+  { src: '/images/Group mentourship/IMG_20250804_101125.webp', alt: 'Programme 2025' },
+  { src: '/images/Surport needed/IMG_20231214_094434.webp', alt: 'Support needed' },
+  { src: '/images/Surport needed/IMG_20231219_104131.webp', alt: 'Support needed' },
+  { src: '/images/Surport needed/IMG_20231219_133155.webp', alt: 'Community support' },
+  { src: '/images/Surport needed/IMG_20231219_133208.webp', alt: 'Community support' },
+  { src: '/images/Surport needed/IMG_20231219_144635.webp', alt: 'Community support' },
+  { src: '/images/The living conditions of the girls/20230717_130346.webp', alt: 'Girls at the centre' },
+  { src: '/images/The living conditions of the girls/IMG_20230408_171835.webp', alt: 'Centre environment' },
+  { src: '/images/The Board of trustees/IMG_20231210_163328.webp', alt: 'Board of Trustees' },
+  { src: '/images/The Board of trustees/IMG_20231210_163527.webp', alt: 'Board of Trustees' },
+  { src: '/images/The Board of trustees/IMG_20240906_140037.webp', alt: 'Board meeting' },
+  { src: '/images/The Board of trustees/jaredabout.webp', alt: 'Board meeting' },
+  { src: '/images/testimonial/fdoirene.webp', alt: 'Irene — graduate' },
+  { src: '/images/testimonial/fdoflorence.webp', alt: 'Florence — graduate' },
+  { src: '/images/testimonial/Mitchell Andai an Preciouse Joy.webp', alt: 'Mitchelle — graduate' },
 ];
 // Duplicate for seamless infinite loop
 const MARQUEE_DOUBLED = [...MARQUEE_PHOTOS, ...MARQUEE_PHOTOS];
@@ -60,53 +59,53 @@ const STATS = [
     value: '78',
     label: 'Girls Rescued',
     desc: 'Pregnant girls and teen mothers rescued from crisis and sheltered since 2021.',
-    portrait: '/images/testimonial/fdoflorence.jpg',
+    portrait: '/images/testimonial/fdoflorence.webp',
   },
   {
     value: '4,200+',
     label: 'Girls Mentored',
     desc: 'Adolescent girls reached through prevention and health mentorship.',
-    portrait: '/images/Group mentourship/IMG_20231219_130149.jpg',
+    portrait: '/images/Group mentourship/IMG_20231219_130149.webp',
   },
   {
     value: '447',
     label: 'Families Reunited',
     desc: 'Teen mothers reconciled with families through mediation and healing.',
-    portrait: '/images/testimonial/Mitchell Andai an Preciouse Joy.jpg',
+    portrait: '/images/testimonial/Mitchell Andai an Preciouse Joy.webp',
   },
   {
     value: '84',
     label: 'Back in School',
     desc: 'Girls re-enrolled in learning institutions through our intervention.',
-    portrait: '/images/testimonial/fdoirene.jpg',
+    portrait: '/images/testimonial/fdoirene.webp',
   },
 ];
 
 /* ── Flip cards data ─────────────────────────────────────── */
 const FLIP_CARDS = [
   {
-    frontImage: '/images/The living conditions of the girls/20230717_130346.jpg',
-    frontAlt:   'Living conditions — the challenge',
+    frontImage: '/images/The living conditions of the girls/20230717_130346.webp',
+    frontAlt: 'Living conditions — the challenge',
     frontLabel: 'The Challenge',
-    backImage:  '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-01 at 18.07.28_4558dea1.jpg',
-    backAlt:    'LovelyKids Daycare — hope restored',
-    backLabel:  'Hope Restored',
+    backImage: '/images/Daycar and Fadhili Dada Centre/WhatsApp Image 2024-02-01 at 18.07.28_4558dea1.webp',
+    backAlt: 'LovelyKids Daycare — hope restored',
+    backLabel: 'Hope Restored',
   },
   {
-    frontImage: '/images/Surport needed/IMG_20231219_133155.jpg',
-    frontAlt:   'Support needed — vulnerability',
+    frontImage: '/images/Surport needed/IMG_20231219_133155.webp',
+    frontAlt: 'Support needed — vulnerability',
     frontLabel: 'Vulnerability',
-    backImage:  '/images/Group mentourship/IMG_20240918_131122.jpg',
-    backAlt:    'Group mentorship — community',
-    backLabel:  'Community Built',
+    backImage: '/images/Group mentourship/IMG_20240918_131122.webp',
+    backAlt: 'Group mentorship — community',
+    backLabel: 'Community Built',
   },
   {
-    frontImage: '/images/Surport needed/IMG_20231219_104131.jpg',
-    frontAlt:   'Before intervention',
+    frontImage: '/images/Surport needed/IMG_20231219_104131.webp',
+    frontAlt: 'Before intervention',
     frontLabel: 'Before',
-    backImage:  '/images/testimonial/Mitchell Andai an Preciouse Joy.jpg',
-    backAlt:    'Mitchelle and Precious Joy — graduate',
-    backLabel:  'Second Chance',
+    backImage: '/images/testimonial/Mitchell Andai an Preciouse Joy.webp',
+    backAlt: 'Mitchelle and Precious Joy — graduate',
+    backLabel: 'Second Chance',
   },
 ];
 
@@ -116,19 +115,20 @@ const FLIP_CARDS = [
 const Home = ({ setCurrentPage }) => {
   const handleNavClick = (pageId) => {
     setCurrentPage(pageId);
+    // eslint-disable-next-line react-hooks/immutability
     window.location.hash = pageId === 'home' ? '' : `#${pageId}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   /* Scroll-reveal refs */
-  const revealWelcomeText  = useScrollReveal();
-  const revealWelcomeImg   = useScrollReveal();
-  const revealCard1        = useScrollReveal();
-  const revealCard2        = useScrollReveal();
-  const revealCard3        = useScrollReveal();
-  const revealFlip1        = useScrollReveal();
-  const revealFlip2        = useScrollReveal();
-  const revealFlip3        = useScrollReveal();
+  const revealWelcomeText = useScrollReveal();
+  const revealWelcomeImg = useScrollReveal();
+  const revealCard1 = useScrollReveal();
+  const revealCard2 = useScrollReveal();
+  const revealCard3 = useScrollReveal();
+  const revealFlip1 = useScrollReveal();
+  const revealFlip2 = useScrollReveal();
+  const revealFlip3 = useScrollReveal();
 
   return (
     <div className="animate-fade">
@@ -243,7 +243,7 @@ const Home = ({ setCurrentPage }) => {
               }} />
               <div className="img-frame img-frame-landscape" style={{ position: 'relative', zIndex: 1 }}>
                 <ImageWithFallback
-                  src="/images/Daycar and Fadhili Dada Centre/IMG_20231219_134710.jpg"
+                  src="/images/Daycar and Fadhili Dada Centre/IMG_20231219_134710.webp"
                   alt="Centre community growing together"
                   description="Community and daily programme at the centre"
                 />

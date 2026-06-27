@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, Compass, Shield, Users, Award, BookOpen } from 'lucide-react';
 import ImageWithFallback from '../components/ImageWithFallback';
 
@@ -47,20 +46,20 @@ const About = () => {
       <section className="section">
         <div className="container">
           <div className="grid grid-2" style={{ alignItems: 'flex-start', gap: '3.5rem' }}>
-            
+
             {/* Story Image Section */}
             <div>
               <div className="img-frame img-frame-square" style={{ maxWidth: '360px', margin: '0 auto 1.5rem auto' }}>
                 <ImageWithFallback
-                  src="/images/team/jaredabout.png"
+                  src="/images/team/.jaredabout.png"
                   alt="Reverend Jared Okello"
                   description="Reverend Jared Okello, Founder of Fadhili Dada"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
                 />
               </div>
-              <div style={{ 
-                backgroundColor: 'rgba(var(--primary-rgb), 0.04)', 
-                borderLeft: '4px solid var(--primary)', 
+              <div style={{
+                backgroundColor: 'rgba(var(--primary-rgb), 0.04)',
+                borderLeft: '4px solid var(--primary)',
                 padding: '1.25rem',
                 borderRadius: '0 var(--radius-md) var(--radius-md) 0'
               }}>
@@ -75,11 +74,11 @@ const About = () => {
 
             {/* Story Text Section */}
             <div>
-              <span style={{ 
-                color: 'var(--secondary)', 
-                fontWeight: '700', 
-                fontSize: '0.9rem', 
-                textTransform: 'uppercase', 
+              <span style={{
+                color: 'var(--secondary)',
+                fontWeight: '700',
+                fontSize: '0.9rem',
+                textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 display: 'block',
                 marginBottom: '0.5rem'
@@ -87,7 +86,7 @@ const About = () => {
                 Our Story
               </span>
               <h2 style={{ fontSize: '2.2rem', marginBottom: '1.5rem' }}>Born Out of Lived Experience</h2>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: 'var(--text-muted)' }}>
                 <p>
                   Fadhili Dada Organization was born out of lived experience. Our founder, Reverend Jared Okello, grew up as the eldest child in a struggling family after the loss of his mother. In his youth, he became the primary provider for seven siblings. He candidly acknowledges the personal cost of that season — how early responsibilities without adequate guidance led to failure, and how the tragic loss of two of his teenage sisters to HIV/AIDS became a defining turning point in his life.
@@ -109,7 +108,7 @@ const About = () => {
       <section className="section section-bg-alt" style={{ borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
           <div className="grid grid-2" style={{ gap: '3rem' }}>
-            
+
             {/* Vision Card */}
             <div className="card" style={{ padding: '2.5rem', height: '100%' }}>
               <div className="value-icon-wrapper" style={{ backgroundColor: 'rgba(var(--secondary-rgb), 0.10)', color: 'var(--secondary)' }}>
@@ -130,10 +129,10 @@ const About = () => {
               <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
                 Driven by compassion for the poor and the afflicted, Fadhili Dada acts as an agent of social protection and spiritual redemption. We work to:
               </p>
-              <ul style={{ 
-                listStyle: 'none', 
-                padding: 0, 
-                color: 'var(--text-muted)', 
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                color: 'var(--text-muted)',
                 fontSize: '0.95rem',
                 display: 'flex',
                 flexDirection: 'column',
@@ -182,7 +181,7 @@ const About = () => {
           <div className="grid grid-3" style={{ gap: '2rem' }}>
             {values.map((val, idx) => (
               <div key={idx} className="card" style={{ padding: '2rem' }}>
-                <div className="value-icon-wrapper" style={{ 
+                <div className="value-icon-wrapper" style={{
                   backgroundColor: idx % 2 === 0 ? 'rgba(var(--primary-rgb), 0.08)' : 'rgba(223, 91, 32, 0.08)',
                   color: idx % 2 === 0 ? 'var(--primary)' : 'var(--secondary)'
                 }}>
@@ -194,11 +193,11 @@ const About = () => {
                 </p>
               </div>
             ))}
-            
+
             {/* Context/Environment Side Picture */}
             <div className="card" style={{ padding: 0, overflow: 'hidden', gridColumn: 'span 1', display: 'flex', justifyContent: 'center' }}>
               <ImageWithFallback
-                src="/images/The living conditions of the girls/IMG_20230408_171835.jpg"
+                src="/images/The living conditions of the girls/IMG_20230408_171835.webp"
                 alt="Fadhili Dada environment"
                 description="Living conditions and community setting"
                 style={{ width: '100%', height: '100%', minHeight: '220px', objectFit: 'cover' }}
@@ -242,7 +241,7 @@ const About = () => {
             <div>
               <div className="img-frame img-frame-landscape">
                 <ImageWithFallback
-                  src="/images/The Board of trustees/IMG_20231210_163328.jpg"
+                  src="/images/The Board of trustees/IMG_20231210_163328.webp"
                   alt="Fadhili Dada Team"
                   description="Fadhili Dada organization Board and Management team"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -269,7 +268,7 @@ const About = () => {
 
           <div className="grid grid-3" style={{ gap: '2rem' }}>
             {[
-              { name: 'Reverend Jared Okello', role: 'Executive Director & Founder', img: '/images/team/jaredabout.png' },
+              { name: 'Reverend Jared Okello', role: 'Executive Director & Founder', img: '/images/team/.jaredabout.png' },
               { name: 'Kennedy Odongo', role: 'Board of Trustees', img: '/images/team/kennedy odongo.png' },
               { name: 'Lilian Yongo', role: 'Board of Trustees', img: '/images/team/lilian yongo.png' },
               { name: 'Mildred Akoth', role: 'Board of Trustees', img: '/images/team/mildred akoth.png' },
